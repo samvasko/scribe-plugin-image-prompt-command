@@ -1,0 +1,2 @@
+scribe-plugin-image-command
+===========================
