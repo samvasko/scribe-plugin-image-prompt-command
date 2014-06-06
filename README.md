@@ -4,9 +4,9 @@
 ### Installation
 
 Using npm `npm install --save scribe-plugin-image-prompt-command`
-~ or ~
+
 Using bower `bower install --save scribe-plugin-image-prompt-command`
-~ or ~
+
 By cloning this repo and checking our the dist branch
 
 ### Usage
