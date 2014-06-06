@@ -16,7 +16,7 @@
     "url": "https://github.com/bliker/scribe-plugin-image-command/issues"
   },
   "homepage": "https://github.com/bliker/scribe-plugin-image-command",
-  "dependencies": {
+  "devDependencies": {
     "browserify": "^4.1.7",
     "gulp": "^3.7.0",
     "gulp-util": "^2.2.15",
