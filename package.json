@@ -1,0 +1,25 @@
+{
+  "name": "scribe-plugin-image-command",
+  "version": "0.0.1",
+  "description": "scribe-plugin-image-command",
+  "main": "src/scribe-plugin-image-command.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bliker/scribe-plugin-image-command.git"
+  },
+  "author": "Samuel Vasko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bliker/scribe-plugin-image-command/issues"
+  },
+  "homepage": "https://github.com/bliker/scribe-plugin-image-command",
+  "dependencies": {
+    "browserify": "^4.1.7",
+    "gulp": "^3.7.0",
+    "gulp-util": "^2.2.15",
+    "vinyl-source-stream": "^0.1.1"
+  }
+}
