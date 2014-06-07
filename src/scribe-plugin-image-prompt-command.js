@@ -5,7 +5,6 @@ module.exports = function () {
 
         imagePromptCommand.execute = function () {
             link = window.prompt('Gimme link');
-            debugger;
             if (link) {
                 if (!/^https?\:\/\//.test(link)) {
                     link = location.protocol + '//' + link;
