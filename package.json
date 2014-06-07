@@ -1,7 +1,7 @@
 {
-  "name": "scribe-plugin-image-command",
+  "name": "scribe-plugin-image-prompt-command",
   "version": "0.0.4",
-  "description": "scribe-plugin-image-command",
+  "description": "scribe-plugin-image-prompt-command",
   "main": "src/scribe-plugin-image-prompt-command.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
