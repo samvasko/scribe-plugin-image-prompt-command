@@ -1,29 +1,32 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var gutil = require('gulp-util');
+var streamify = require('gulp-streamify')
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
+var uglify = require('gulp-uglify');
+var pkg = require('./package.json');
 
 gulp.task('default', ['browserify'], function () {
     gulp.watch('./src/*.js', ['browserify']);
 });
 
-gulp.task('build', ['browserify', 'uglify']);
-
 gulp.task('browserify', function () {
-    var b = browserify('./src/scribe-plugin-image-prompt-command.js');
-    b.bundle({
-        standalone: 'scribe-plugin-image-prompt-command',
-    }).pipe(source('scribe-plugin-image-prompt-command.js'))
+    var b = browserify('./' + pkg.main);
+    b.bundle({debug: true})
+        .on('error', gutil.log)
+        .pipe(source(pkg.name + '.js'))
         .pipe(gulp.dest('.'));
 });
 
-var uglify = require('gulp-uglify');
-
-gulp.task('uglify', function() {
-    gulp.src('./scribe-plugin-image-prompt-command.js')
-        .pipe(uglify())
+gulp.task('build', function () {
+    var b = browserify('./' + pkg.main);
+    b.bundle({standalone: pkg.name})
+        .on('error', gutil.log)
+        .pipe(source(pkg.name + '.js'))
+        .pipe(gulp.dest('.'))
+        .pipe(streamify(uglify()))
         .pipe(rename({extname: '.min.js'}))
         .pipe(gulp.dest('.'))
 });
