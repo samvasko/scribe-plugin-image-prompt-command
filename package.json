@@ -1,10 +1,10 @@
 {
   "name": "scribe-plugin-image-prompt-command",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "scribe-plugin-image-prompt-command",
   "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/testem/testem.js"
   },
   "repository": {
     "type": "git",
