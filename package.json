@@ -2,7 +2,7 @@
   "name": "scribe-plugin-image-prompt-command",
   "version": "0.0.6",
   "description": "scribe-plugin-image-prompt-command",
-  "main": "src/scribe-plugin-image-prompt-command.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +23,10 @@
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^0.3.0",
     "gulp-util": "^2.2.15",
+    "testem": "^0.6.16",
     "vinyl-source-stream": "^0.1.1"
+  },
+  "dependencies": {
+    "extend": "^1.2.1"
   }
 }
