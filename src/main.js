@@ -22,13 +22,28 @@ module.exports = function (options, prompt) {
                 options.url = link
             };
 
-            if (!/^https?\:\/\//.test(link)) {
-                link = location.protocol + '//' + link;
+            if (!/^https?\:\/\//.test(options.url)) {
+                options.url = location.protocol + '//' + options.url;
             };
 
-            scribe.api.SimpleCommand.prototype.execute.call(this, link);
+            var url = options.url;
+            var html = addAttributes('<img src=' + url + '>', options.attributes);
+
+            scribe.api.SimpleCommand.prototype.execute.call(this, html);
         }
 
         scribe.commands.imagePrompt = imagePromptCommand;
     };
+}
+
+function addAttributes (html, attrs) {
+    var host = document.createElement('div');
+    host.innerHTML = unescape(html);
+
+    var frame = host.children[0];
+    for (var prop in attrs) {
+        frame.setAttribute(prop, attrs[prop]);
+    }
+
+    return host.innerHTML;
 }
