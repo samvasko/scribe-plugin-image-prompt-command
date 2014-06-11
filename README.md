@@ -13,21 +13,24 @@ I may actually provide a release builds outside of npm/bower if somebody will sh
 Can be required with browserify, used as AMD or included in script.
 **npm version will not work with last two**
 
-### Api
-```
-Creates simple image. You can pass it a link prompt function
-that will be called when command is executed. The function should return
-valid url. So please validate.
-@param  {url function()} Function for getting the url
-@return {function(scribe)}  Standard scribe plugin
-```
-
-### Example
+### API
 ```Javascript
 var imagePrompt = require('scribe-plugin-image-prompt-command');
-scribe.use(imagePrompt(function() {
+
+/**
+ * Creates simple image. You can pass it a link prompt function
+ * that will be called when command is executed. The function should return
+ * valid url. So please validate.
+ * @optional  {Object}   options Options for created image
+ * @optional  {Function} prompt  Function for getting the url
+ * @return    {Function}
+ */
+scribe.use({attributes: {'class': 'post-image'}}, imagePrompt(function() {
     // Show your modal or whatever
     return window.prompt('Url please');
+
+    // or pass extra attributes form modal
+    return {attributes: {height: 200}, url: 'someurl'};
 }));
 
 // Now can be executed like any other scribe command
