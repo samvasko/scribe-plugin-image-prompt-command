@@ -4,7 +4,7 @@
   "description": "scribe-plugin-image-prompt-command",
   "main": "src/main.js",
   "scripts": {
-    "test": "node node_modules/testem/testem.js"
+    "test": "gulp browserify && node node_modules/testem/testem.js ci"
   },
   "repository": {
     "type": "git",
