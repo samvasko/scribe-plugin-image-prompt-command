@@ -1,3 +1,4 @@
 {
-  "src_files": ["test/tests.js"]
+  "src_files": ["build/*.js", "!build/*.min.js"],
+  "serve_files": ["build/tests.js"]
 }
