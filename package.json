@@ -1,6 +1,6 @@
 {
   "name": "scribe-plugin-image-prompt-command",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "scribe-plugin-image-prompt-command",
   "main": "src/main.js",
   "scripts": {
