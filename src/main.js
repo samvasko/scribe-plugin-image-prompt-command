@@ -4,13 +4,18 @@ var extend = require('extend');
  * Creates simple image. You can pass it a link prompt function
  * that will be called when command is executed. The function should return
  * valid url. So please validate.
- * @param  {function} prompt function
+ * @optional  {Object}   options Options for created image
+ * @optional  {Function} prompt Function for getting the url
  * @return {function}
  */
 module.exports = function (options, prompt) {
     return function (scribe) {
         var imagePromptCommand = new scribe.api.Command('insertImage');
         imagePromptCommand.nodeName = 'IMG';
+
+        if (typeof options == 'function') {
+            prompt = options;
+        };
 
         imagePromptCommand.execute = function () {
             link = prompt ? prompt() : window.prompt('Enter image url');
