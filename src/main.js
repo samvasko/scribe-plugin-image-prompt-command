@@ -24,8 +24,8 @@ module.exports = function (options, prompt) {
                 // If some extra properties were passed from prompt
                 options = extend(options, link);
             } else if (typeof link === 'string') {
-                options.url = link
-            };
+                options.url = link;
+            }
 
             if (!/^https?\:\/\//.test(options.url)) {
                 options.url = location.protocol + '//' + options.url;
@@ -35,7 +35,7 @@ module.exports = function (options, prompt) {
             var html = addAttributes('<img src=' + url + '>', options.attributes);
 
             scribe.api.SimpleCommand.prototype.execute.call(this, html);
-        }
+        };
 
         scribe.commands.imagePrompt = imagePromptCommand;
     };
