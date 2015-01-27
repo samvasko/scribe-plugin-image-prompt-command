@@ -10,7 +10,7 @@ var extend = require('extend');
  */
 module.exports = function (options, prompt) {
     return function (scribe) {
-        var imagePromptCommand = new scribe.api.Command('insertImage');
+        var imagePromptCommand = new scribe.api.Command('insertHTML');
         imagePromptCommand.nodeName = 'IMG';
 
         if (typeof options == 'function') {
