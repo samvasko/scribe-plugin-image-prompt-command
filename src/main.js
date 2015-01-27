@@ -15,10 +15,10 @@ module.exports = function (options, prompt) {
 
         if (typeof options == 'function') {
             prompt = options;
-        };
+        }
 
         imagePromptCommand.execute = function () {
-            link = prompt ? prompt() : window.prompt('Enter image url');
+            var link = prompt ? prompt() : window.prompt('Enter image url');
             if (!link) return false;
             if (typeof link === 'object') {
                 // If some extra properties were passed from prompt
@@ -29,7 +29,7 @@ module.exports = function (options, prompt) {
 
             if (!/^https?\:\/\//.test(options.url)) {
                 options.url = location.protocol + '//' + options.url;
-            };
+            }
 
             var url = options.url;
             var html = addAttributes('<img src=' + url + '>', options.attributes);
